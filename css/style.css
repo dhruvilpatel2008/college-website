@@ -876,3 +876,90 @@ body.dark .tech-card {
 body.dark .tech-card li {
   color: #cbd5f5;
 }
+/* ===== MATERIALS PAGE ===== */
+.materials {
+  padding: 60px 8%;
+}
+
+.materials h1 {
+  font-size: 36px;
+  color: #1e40af;
+}
+
+.materials .subtitle {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.material-box {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.material-box h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.material-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.material-box li {
+  padding: 10px 0;
+}
+
+.material-box a {
+  text-decoration: none;
+  color: #1f2937;
+}
+
+.material-box a:hover {
+  color: #2563eb;
+}
+
+/* Dark mode */
+body.dark .material-box {
+  background: #020617;
+}
+
+body.dark .material-box a {
+  color: #e5e7eb;
+}
+/* ===== MATERIALS CTA (INDEX) ===== */
+.materials-home {
+  padding: 60px 8%;
+}
+
+.materials-box {
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.materials-box h2 {
+  color: #1e40af;
+  margin-bottom: 12px;
+}
+
+.materials-box p {
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* Dark mode */
+body.dark .materials-box {
+  background: #020617;
+}
+
+body.dark .materials-box p {
+  color: #cbd5f5;
+}
