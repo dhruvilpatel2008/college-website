@@ -421,3 +421,195 @@ body.dark .skills li {
 body.dark .btn {
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
 }
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #f1f5f9;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #ffffff;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.navbar nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+  color: #2563eb;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+.theme-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* ===== ABOUT PAGE ===== */
+.about-page {
+  padding: 60px 8%;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===== INTRO BOX ===== */
+.about-intro {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  font-size: 16px;
+}
+
+/* ===== SECTION BOX ===== */
+.about-section {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.about-section h2 {
+  color: #1e40af;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  border-left: 3px solid #2563eb;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+}
+
+.timeline-item span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.timeline-item h3 {
+  font-size: 18px;
+  color: #1e40af;
+}
+
+/* ===== SKILLS ===== */
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.skill-groups h4 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.skill-groups ul {
+  padding-left: 18px;
+}
+
+.skill-groups li {
+  margin-bottom: 6px;
+}
+
+/* ===== ACHIEVEMENTS ===== */
+.achievements {
+  padding-left: 18px;
+}
+
+.achievements li {
+  margin-bottom: 8px;
+}
+
+/* ===== RESUME BUTTON ===== */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 22px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #ffffff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.06);
+}
+
+/* =====================
+   DARK MODE STYLES
+   ===================== */
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark .navbar,
+body.dark footer {
+  background: #020617;
+}
+
+body.dark .about-intro,
+body.dark .about-section {
+  background: #020617;
+}
+
+body.dark h2,
+body.dark h3 {
+  color: #93c5fd;
+}
+
+body.dark .btn {
+  background: #38bdf8;
+  color: #020617;
+}
+
+body.dark .timeline {
+  border-color: #93c5fd;
+}
