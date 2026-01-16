@@ -3,6 +3,8 @@ echo ================================
 echo Updating website on GitHub...
 echo ================================
 
+git pull origin main --rebase
+
 git add .
 git commit -m "Auto update"
 git push
