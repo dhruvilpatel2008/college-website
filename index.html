@@ -7,38 +7,132 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
 <div class="animated-bg"></div>
-    <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <h2 class="logo">Dhruvil</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button id="theme-toggle" class="theme-btn">🌙</button>
 
-  </header>
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <h2 class="logo">Dhruvil</h2>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="playground.html">Playground</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button id="theme-toggle" class="theme-btn">🌙</button>
+</header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Hi, I'm <span>Dhruvil</span></h1>
-      <h3>Aspiring Web Developer</h3>
-      <p>I am a college student passionate about building clean and modern websites.</p>
-      <a href="projects.html" class="btn">View Projects</a>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Dhruvil</span></h1>
+    <h3>Aspiring Web Developer</h3>
+    <p>
+      I am a college student passionate about building clean,
+      modern, and user-friendly websites.
+    </p>
+    <a href="projects.html" class="btn">View Projects</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="images/image.png" alt="Profile">
+  </div>
+</section>
+
+<!-- =====================
+     1️⃣ WHAT I DO
+     ===================== -->
+<section class="what-i-do">
+  <h2>What I Do</h2>
+
+  <div class="what-grid">
+    <div class="what-card">
+      <h3>Web Development</h3>
+      <p>
+        I build responsive and modern websites using
+        HTML, CSS, and JavaScript with a focus on clean UI.
+      </p>
     </div>
 
-    <div class="hero-img">
-      <img src="images/image.png" alt="Profile">
+    <div class="what-card">
+      <h3>Problem Solving</h3>
+      <p>
+        I enjoy breaking down problems, debugging step by step,
+        and learning through hands-on practice.
+      </p>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Dhruvil. All rights reserved.</p>
-  </footer>
+    <div class="what-card">
+      <h3>Continuous Learning</h3>
+      <p>
+        As an engineering student, I constantly explore
+        new technologies to improve my skills.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================
+     2️⃣ TECH STACK
+     ===================== -->
+<section class="tech-stack">
+  <h2>My Tech Stack</h2>
+
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h3>Frontend</h3>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="tech-card">
+      <h3>Tools & Workflow</h3>
+      <ul>
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>VS Code</li>
+      </ul>
+    </div>
+
+    <div class="tech-card">
+      <h3>Core Engineering</h3>
+      <ul>
+        <li>Electrical Circuits</li>
+        <li>Network Theory</li>
+        <li>Engineering Mathematics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEMESTER PROGRESS ===== -->
+<section class="semester-progress-wrapper">
+  <div class="semester-progress-box">
+    <h2>Semester Progress</h2>
+
+    <div class="progress-info">
+      <span id="current-semester"></span>
+      <span id="progress-percent"></span>
+    </div>
+
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2026 Dhruvil. All rights reserved.</p>
+</footer>
+
 <script src="js/darkmode.js"></script>
+<script src="js/progress.js"></script>
 
 </body>
 </html>

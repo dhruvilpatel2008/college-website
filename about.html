@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Dhruvil Patel</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <h2 class="logo">Dhruvil</h2>
   <nav>
@@ -20,18 +22,45 @@
   <button id="theme-toggle" class="theme-btn">🌙</button>
 </header>
 
+<!-- ===== ABOUT PAGE ===== -->
 <section class="about-page">
   <div class="about-container">
 
-    <!-- INTRO -->
     <h1>About Me</h1>
-    <p class="about-intro">
-      I am a second-year undergraduate student pursuing Electrical Engineering at
-      Chandubhai S Patel Institute of Technology (CSPIT), a constituent institute of
-      Charotar University of Science and Technology (CHARUSAT).
-      I have recently continued my academic journey in the second year and am actively
-      developing my technical skills in web development alongside core engineering studies.
-    </p>
+
+    <!-- INTRO BOX -->
+    <div class="about-intro">
+      <p>
+        I am an undergraduate student pursuing Electrical Engineering at
+        Chandubhai S Patel Institute of Technology (CSPIT),
+        a constituent institute of Charotar University of Science and Technology (CHARUSAT).
+        I have a strong interest in technology and web development, and I actively
+        work on improving my technical skills alongside my academic studies.
+      </p>
+    </div>
+
+    <!-- ACADEMIC OVERVIEW (AUTO UPDATED) -->
+    <div class="about-section">
+      <h2>Academic Overview</h2>
+      <p id="semester-text">
+        <!-- Auto-updated by semester.js -->
+      </p>
+    </div>
+       <!-- ===== SEMESTER PROGRESS ===== -->
+<div class="semester-progress-wrapper">
+  <div class="semester-progress-box">
+    <h2>Semester Progress</h2>
+
+    <div class="progress-info">
+      <span id="current-semester"></span>
+      <span id="progress-percent"></span>
+    </div>
+
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+  </div>
+</div>
 
     <!-- EDUCATION -->
     <div class="about-section">
@@ -40,14 +69,14 @@
       <div class="timeline">
         <div class="timeline-item">
           <span>2025 – Present</span>
-          <h3>B.Tech – Electrical Engineering (Second Year)</h3>
+          <h3>B.Tech – Electrical Engineering</h3>
           <p>CSPIT, CHARUSAT</p>
         </div>
 
         <div class="timeline-item">
           <span>2022 – 2024</span>
           <h3>Diploma / Higher Secondary Education</h3>
-          <p>Engineering / Science Background</p>
+          <p>Science / Engineering Background</p>
         </div>
       </div>
     </div>
@@ -83,10 +112,10 @@
     <div class="about-section">
       <h2>Achievements & Learning</h2>
       <ul class="achievements">
-        <li>Successfully transitioned into Second Year of B.Tech (EE)</li>
         <li>Built and deployed a personal portfolio website</li>
-        <li>Hands-on experience with GitHub and version control</li>
-        <li>Continuous learner in web development and programming</li>
+        <li>Hands-on experience with Git and GitHub</li>
+        <li>Continuous learner in web development</li>
+        <li>Actively improving academic and technical skills</li>
       </ul>
     </div>
 
@@ -94,8 +123,8 @@
     <div class="about-section resume-section">
       <h2>Resume</h2>
       <p>
-        My resume highlights my academic background, technical skills,
-        and ongoing learning journey.
+        My resume provides a detailed overview of my academic background,
+        technical skills, and learning journey.
       </p>
       <a href="resume.pdf" class="btn" download>Download Resume</a>
     </div>
@@ -103,10 +132,16 @@
   </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <p>© 2026 Dhruvil Patel. All rights reserved.</p>
 </footer>
 
+<!-- ===== JS FILES ===== -->
 <script src="js/darkmode.js"></script>
+<script src="js/semester.js"></script>
+<script src="js/progress.js"></script>
+
+
 </body>
 </html>

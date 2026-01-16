@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Playground | Dhruvil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h2 class="logo">Dhruvil</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="playground.html" class="active">Playground</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button id="theme-toggle" class="theme-btn">🌙</button>
+</header>
+
+<section class="playground">
+
+  <h1>Frontend Code Playground</h1>
+  <p class="subtitle">Write HTML, CSS & JavaScript and run it live</p>
+
+  <div class="editor-container">
+
+    <div class="editors">
+      <textarea id="html-code" placeholder="Write HTML here"></textarea>
+      <textarea id="css-code" placeholder="Write CSS here"></textarea>
+      <textarea id="js-code" placeholder="Write JavaScript here"></textarea>
+
+      <button class="btn" onclick="runCode()">▶ Run Code</button>
+    </div>
+
+    <div class="output">
+      <iframe id="output-frame"></iframe>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/darkmode.js"></script>
+<script src="js/playground.js"></script>
+
+</body>
+</html>

@@ -613,3 +613,266 @@ body.dark .btn {
 body.dark .timeline {
   border-color: #93c5fd;
 }
+/* ===== SEMESTER PROGRESS (INDEX + ABOUT) ===== */
+.semester-progress-wrapper {
+  padding: 40px 8%;
+}
+
+.semester-progress-box {
+  max-width: 700px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.semester-progress-box h2 {
+  color: #1e40af;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  transition: width 0.8s ease;
+}
+
+/* Dark mode support */
+body.dark .semester-progress-box {
+  background: #020617;
+}
+
+body.dark .progress-bar {
+  background: #1e293b;
+}
+/* =========================
+   PLAYGROUND PAGE – PRO UI
+   ========================= */
+
+.playground {
+  padding: 50px 6%;
+}
+
+.playground h1 {
+  font-size: 36px;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+.playground .subtitle {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+
+/* ===== LEFT: EDITORS ===== */
+.editors {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editors textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  padding: 12px;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  outline: none;
+}
+
+.editors textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+/* Run button */
+.editors .btn {
+  margin-top: 10px;
+  align-self: flex-start;
+  padding: 10px 26px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== RIGHT: OUTPUT ===== */
+.output {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.output iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* =========================
+   DARK MODE – PLAYGROUND
+   ========================= */
+body.dark .editors,
+body.dark .output {
+  background: #020617;
+}
+
+body.dark .editors textarea {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #1e293b;
+}
+
+body.dark .editors textarea:focus {
+  background: #020617;
+}
+
+body.dark .playground h1 {
+  color: #e5e7eb;
+}
+
+body.dark .subtitle {
+  color: #94a3b8;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  .editor-container {
+    grid-template-columns: 1fr;
+  }
+
+  .output iframe {
+    min-height: 300px;
+  }
+}
+
+/* ===== WHAT I DO (NEW) ===== */
+.what-i-do {
+  padding: 70px 8%;
+  text-align: center;
+}
+
+.what-i-do h2 {
+  font-size: 32px;
+  color: #1e40af;
+  margin-bottom: 40px;
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.what-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.what-card h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.what-card p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Dark mode */
+body.dark .what-card {
+  background: #020617;
+}
+
+body.dark .what-card p {
+  color: #cbd5f5;
+}
+/* ===== TECH STACK (NEW) ===== */
+.tech-stack {
+  padding: 70px 8%;
+  text-align: center;
+}
+
+.tech-stack h2 {
+  font-size: 32px;
+  color: #1e40af;
+  margin-bottom: 40px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.tech-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tech-card h3 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.tech-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tech-card li {
+  padding: 6px 0;
+  color: #4b5563;
+}
+
+/* Dark mode */
+body.dark .tech-card {
+  background: #020617;
+}
+
+body.dark .tech-card li {
+  color: #cbd5f5;
+}
