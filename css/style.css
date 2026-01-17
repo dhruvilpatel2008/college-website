@@ -1039,3 +1039,77 @@ body.dark .materials-box p {
     font-size: 14px;
   }
 }
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  max-width: 520px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Copy button */
+.copy-btn {
+  margin-left: auto;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Toast message */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #16a34a;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark mode */
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #1e293b;
+}
+/* WhatsApp info line above contact form */
+.whatsapp-info {
+  max-width: 520px;
+  margin: 35px auto 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* Dark mode */
+body.dark .whatsapp-info {
+  color: #94a3b8;
+}
