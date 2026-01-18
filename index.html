@@ -8,24 +8,6 @@
 </head>
 <body>
 
-<!-- ===== SVG FILTER (FOG EFFECT REQUIRED) ===== -->
-<svg class="filters" xmlns="http://www.w3.org/2000/svg">
-  <filter id="fogNoise">
-    <feTurbulence
-      type="fractalNoise"
-      baseFrequency="0.015"
-      numOctaves="3"
-      seed="2"
-    />
-    <feDisplacementMap in="SourceGraphic" scale="60" />
-  </filter>
-</svg>
-
-<!-- ===== BACKGROUND FOG LAYERS ===== -->
-<div class="fog-layer back"></div>
-<div class="fog-layer mid"></div>
-<div class="fog-layer front"></div>
-
 <!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <h2 class="logo">Dhruvil</h2>
@@ -46,20 +28,32 @@
   <button id="theme-toggle" class="theme-btn">🌙</button>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero reveal">
-  <div class="hero-text">
-    <h1>Hi, I'm <span>Dhruvil</span></h1>
-    <h3>Aspiring Web Developer</h3>
-    <p>
-      I am a college student passionate about building clean,
-      modern, and user-friendly websites.
-    </p>
-    <a href="projects.html" class="btn">View Projects</a>
-  </div>
+<!-- ===== HERO WITH BACKGROUND VIDEO ===== -->
+<section class="hero video-hero reveal">
 
-  <div class="hero-img">
-    <img src="images/image.png" alt="Profile">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="videos/bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay -->
+  <div class="video-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Dhruvil</span></h1>
+      <h3>Aspiring Web Developer</h3>
+      <p>
+        I am a college student passionate about building clean,
+        modern, and user-friendly websites.
+      </p>
+      <a href="projects.html" class="btn">View Projects</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="images/image.png" alt="Profile">
+    </div>
   </div>
 </section>
 
@@ -94,7 +88,7 @@
   </p>
 </footer>
 
-<!-- ===== JS FILES ===== -->
+<!-- ===== JS ===== -->
 <script src="js/darkmode.js"></script>
 <script src="js/progress.js"></script>
 <script src="js/view-counter.js"></script>

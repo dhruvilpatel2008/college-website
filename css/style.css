@@ -1026,157 +1026,176 @@ body.dark .welcome-toast {
   color: #020617;
 }
 /* =========================
-   ULTRA-PROFESSIONAL FOG
-   LIGHT + DARK MODE SUPPORT
+   HERO BACKGROUND VIDEO
+   PROFESSIONAL SETUP
    ========================= */
 
-/* SVG holder */
-.filters {
+.video-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Video */
+.bg-video {
   position: absolute;
-  width: 0;
-  height: 0;
-}
-
-/* ===== DEFAULT (LIGHT MODE) ===== */
-.fog-layer {
-  position: fixed;
-  inset: -70%;
-  z-index: -1;
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(30,64,175,0.18),
-      rgba(30,64,175,0.10),
-      rgba(30,64,175,0.04),
-      transparent 80%
-    );
-  filter: url(#fogNoise) blur(28px);
-  opacity: 0.22;
-  will-change: transform;
-  pointer-events: none;
-}
-
-/* Depth layers */
-.fog-layer.back {
-  animation: fogBack 42s ease-in-out infinite alternate;
-  opacity: 0.10;
-}
-
-.fog-layer.mid {
-  animation: fogMid 34s ease-in-out infinite alternate;
-  opacity: 0.16;
-}
-
-.fog-layer.front {
-  animation: fogFront 26s ease-in-out infinite alternate;
-  opacity: 0.22;
-}
-
-/* Motion */
-@keyframes fogBack {
-  from { transform: translate(-12%, -8%) scale(1.04); }
-  to   { transform: translate(12%, 8%) scale(1.08); }
-}
-
-@keyframes fogMid {
-  from { transform: translate(10%, -10%) scale(1.06); }
-  to   { transform: translate(-10%, 10%) scale(1.10); }
-}
-
-@keyframes fogFront {
-  from { transform: translate(-8%, 14%) scale(1.10); }
-  to   { transform: translate(8%, -14%) scale(1.14); }
-}
-
-/* Light mode ambient */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -30%;
-  background:
-    radial-gradient(
-      circle at 50% 38%,
-      rgba(96,165,250,0.06),
-      transparent 75%
-    );
-  filter: blur(220px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Light mode vignette */
-body::after {
-  content: "";
-  position: fixed;
   inset: 0;
-  background:
-    radial-gradient(
-      circle,
-      transparent 38%,
-      rgba(2,6,23,0.72)
-    );
-  pointer-events: none;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35; /* professional subtle */
 }
 
-/* =========================
-   DARK MODE OVERRIDES
-   ========================= */
-body.dark .fog-layer {
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(15,23,42,0.55),   /* deep navy */
-      rgba(15,23,42,0.35),
-      rgba(15,23,42,0.18),
-      transparent 82%
-    );
-  opacity: 0.28;
+/* Overlay for contrast */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(2,6,23,0.65),
+    rgba(2,6,23,0.75)
+  );
 }
 
-/* Dark mode depth */
-body.dark .fog-layer.back {
-  opacity: 0.18;
+/* Content above video */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
 }
 
-body.dark .fog-layer.mid {
-  opacity: 0.24;
+/* Dark mode support */
+body.dark .video-overlay {
+  background: linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.85)
+  );
 }
 
-body.dark .fog-layer.front {
-  opacity: 0.30;
-}
-
-/* Dark mode ambient */
-body.dark::before {
-  background:
-    radial-gradient(
-      circle at 50% 40%,
-      rgba(56,189,248,0.04),
-      transparent 78%
-    );
-}
-
-/* Dark mode vignette (stronger) */
-body.dark::after {
-  background:
-    radial-gradient(
-      circle,
-      transparent 32%,
-      rgba(0,0,0,0.85)
-    );
-}
-
-/* =========================
-   MOBILE OPTIMIZATION
-   ========================= */
+/* Mobile optimization */
 @media (max-width: 768px) {
-  .fog-layer {
-    opacity: 0.16;
-    filter: url(#fogNoise) blur(22px);
+  .bg-video {
+    display: none; /* mobile ma video off */
   }
 
-  body.dark .fog-layer {
-    opacity: 0.20;
+  .video-hero {
+    background: linear-gradient(
+      135deg,
+      #020617,
+      #0f172a
+    );
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* =========================
+   HERO BACKGROUND VIDEO FIX
+   ========================= */
+
+.video-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Video */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+/* Overlay (TEXT READABILITY FIX) */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(2,6,23,0.85),
+    rgba(2,6,23,0.65),
+    rgba(2,6,23,0.45)
+  );
+}
+
+/* Content above video */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+}
+
+/* FORCE TEXT VISIBILITY */
+.video-hero .hero-text h1,
+.video-hero .hero-text h3,
+.video-hero .hero-text p {
+  color: #ffffff;
+}
+
+.video-hero .hero-text h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.video-hero .hero-text h1 span {
+  color: #60a5fa;
+}
+
+.video-hero .hero-text h3 {
+  font-size: 22px;
+  opacity: 0.9;
+}
+
+.video-hero .hero-text p {
+  opacity: 0.85;
+  max-width: 520px;
+}
+
+/* Button */
+.video-hero .btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+}
+
+/* Dark mode overlay */
+body.dark .video-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.7)
+  );
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .bg-video {
+    display: none;
+  }
+
+  .video-hero {
+    background: linear-gradient(135deg, #020617, #0f172a);
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .video-hero .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .video-overlay {
+    background: rgba(2,6,23,0.85);
   }
 }
