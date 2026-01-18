@@ -8,7 +8,23 @@
 </head>
 <body>
 
-<div class="animated-bg"></div>
+<!-- ===== SVG FILTER (FOG EFFECT REQUIRED) ===== -->
+<svg class="filters" xmlns="http://www.w3.org/2000/svg">
+  <filter id="fogNoise">
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.015"
+      numOctaves="3"
+      seed="2"
+    />
+    <feDisplacementMap in="SourceGraphic" scale="60" />
+  </filter>
+</svg>
+
+<!-- ===== BACKGROUND FOG LAYERS ===== -->
+<div class="fog-layer back"></div>
+<div class="fog-layer mid"></div>
+<div class="fog-layer front"></div>
 
 <!-- ===== NAVBAR ===== -->
 <header class="navbar">
@@ -20,9 +36,7 @@
     <a href="playground.html">Playground</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
-
-    <!-- MATERIALS -->
-    <a 
+    <a
       href="https://github.com/pateldhruvil2008/college-website/tree/main/materials"
       target="_blank"
     >
@@ -33,7 +47,7 @@
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
+<section class="hero reveal">
   <div class="hero-text">
     <h1>Hi, I'm <span>Dhruvil</span></h1>
     <h3>Aspiring Web Developer</h3>
@@ -50,7 +64,7 @@
 </section>
 
 <!-- ===== SEMESTER PROGRESS ===== -->
-<section class="semester-progress-wrapper">
+<section class="semester-progress-wrapper reveal">
   <div class="semester-progress-box">
     <h2>Semester Progress</h2>
 
@@ -65,16 +79,28 @@
   </div>
 </section>
 
+<!-- ===== WELCOME TOAST ===== -->
+<div id="welcome-toast" class="welcome-toast">
+  👋 Welcome to Dhruvil’s Portfolio
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <p>© 2026 Dhruvil. All rights reserved.</p>
-  <p id="view-counter">👁️ Visitors: Loading...</p>
-
+  <p>
+    © <span id="year"></span> Dhruvil ·
+    <span class="last-updated">
+      Last updated: <span id="lastUpdated"></span>
+    </span>
+  </p>
 </footer>
 
+<!-- ===== JS FILES ===== -->
 <script src="js/darkmode.js"></script>
 <script src="js/progress.js"></script>
 <script src="js/view-counter.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/welcome.js"></script>
+<script src="js/last-updated.js"></script>
+
 </body>
 </html>

@@ -958,3 +958,225 @@ body.dark .output::before {
     min-height: 300px;
   }
 }
+/* =========================
+   SCROLL ANIMATIONS
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left animation */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Right animation */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* ===== WELCOME TOAST ===== */
+.welcome-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #2563eb;
+  color: #ffffff;
+  padding: 14px 26px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+.welcome-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dark mode support */
+body.dark .welcome-toast {
+  background: #38bdf8;
+  color: #020617;
+}
+/* =========================
+   ULTRA-PROFESSIONAL FOG
+   LIGHT + DARK MODE SUPPORT
+   ========================= */
+
+/* SVG holder */
+.filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* ===== DEFAULT (LIGHT MODE) ===== */
+.fog-layer {
+  position: fixed;
+  inset: -70%;
+  z-index: -1;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(30,64,175,0.18),
+      rgba(30,64,175,0.10),
+      rgba(30,64,175,0.04),
+      transparent 80%
+    );
+  filter: url(#fogNoise) blur(28px);
+  opacity: 0.22;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Depth layers */
+.fog-layer.back {
+  animation: fogBack 42s ease-in-out infinite alternate;
+  opacity: 0.10;
+}
+
+.fog-layer.mid {
+  animation: fogMid 34s ease-in-out infinite alternate;
+  opacity: 0.16;
+}
+
+.fog-layer.front {
+  animation: fogFront 26s ease-in-out infinite alternate;
+  opacity: 0.22;
+}
+
+/* Motion */
+@keyframes fogBack {
+  from { transform: translate(-12%, -8%) scale(1.04); }
+  to   { transform: translate(12%, 8%) scale(1.08); }
+}
+
+@keyframes fogMid {
+  from { transform: translate(10%, -10%) scale(1.06); }
+  to   { transform: translate(-10%, 10%) scale(1.10); }
+}
+
+@keyframes fogFront {
+  from { transform: translate(-8%, 14%) scale(1.10); }
+  to   { transform: translate(8%, -14%) scale(1.14); }
+}
+
+/* Light mode ambient */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -30%;
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(96,165,250,0.06),
+      transparent 75%
+    );
+  filter: blur(220px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Light mode vignette */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle,
+      transparent 38%,
+      rgba(2,6,23,0.72)
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =========================
+   DARK MODE OVERRIDES
+   ========================= */
+body.dark .fog-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(15,23,42,0.55),   /* deep navy */
+      rgba(15,23,42,0.35),
+      rgba(15,23,42,0.18),
+      transparent 82%
+    );
+  opacity: 0.28;
+}
+
+/* Dark mode depth */
+body.dark .fog-layer.back {
+  opacity: 0.18;
+}
+
+body.dark .fog-layer.mid {
+  opacity: 0.24;
+}
+
+body.dark .fog-layer.front {
+  opacity: 0.30;
+}
+
+/* Dark mode ambient */
+body.dark::before {
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(56,189,248,0.04),
+      transparent 78%
+    );
+}
+
+/* Dark mode vignette (stronger) */
+body.dark::after {
+  background:
+    radial-gradient(
+      circle,
+      transparent 32%,
+      rgba(0,0,0,0.85)
+    );
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+  .fog-layer {
+    opacity: 0.16;
+    filter: url(#fogNoise) blur(22px);
+  }
+
+  body.dark .fog-layer {
+    opacity: 0.20;
+  }
+}
