@@ -1176,26 +1176,38 @@ body.dark .video-overlay {
   );
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE (VIDEO ENABLED)
+   ========================= */
 @media (max-width: 768px) {
+
+  /* Keep video ON but lighter */
   .bg-video {
-    display: none;
+    display: block;
+    opacity: 0.25;          /* lighter for mobile */
+    filter: blur(1px);     /* soft background */
   }
 
-  .video-hero {
-    background: linear-gradient(135deg, #020617, #0f172a);
+  /* Stronger overlay for readability */
+  .video-overlay {
+    background: rgba(2,6,23,0.8);
   }
 
   .hero-content {
     flex-direction: column;
     text-align: center;
+    padding: 60px 6%;
   }
 
   .video-hero .hero-text h1 {
     font-size: 34px;
   }
 
-  .video-overlay {
-    background: rgba(2,6,23,0.85);
+  .video-hero .hero-text h3 {
+    font-size: 18px;
+  }
+
+  .video-hero .hero-text p {
+    font-size: 14px;
   }
 }
