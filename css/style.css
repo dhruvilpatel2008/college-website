@@ -1025,115 +1025,7 @@ body.dark .welcome-toast {
   background: #38bdf8;
   color: #020617;
 }
-/* =========================
-   HERO BACKGROUND VIDEO
-   PROFESSIONAL SETUP
-   ========================= */
 
-.video-hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-/* Video */
-.bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35; /* professional subtle */
-}
-
-/* Overlay for contrast */
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(2,6,23,0.65),
-    rgba(2,6,23,0.75)
-  );
-}
-
-/* Content above video */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 10%;
-}
-
-/* Dark mode support */
-body.dark .video-overlay {
-  background: linear-gradient(
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.85)
-  );
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .bg-video {
-    display: none; /* mobile ma video off */
-  }
-
-  .video-hero {
-    background: linear-gradient(
-      135deg,
-      #020617,
-      #0f172a
-    );
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-/* =========================
-   HERO BACKGROUND VIDEO FIX
-   ========================= */
-
-.video-hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* Video */
-.bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-}
-
-/* Overlay (TEXT READABILITY FIX) */
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(2,6,23,0.85),
-    rgba(2,6,23,0.65),
-    rgba(2,6,23,0.45)
-  );
-}
-
-/* Content above video */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 10%;
-}
 
 /* FORCE TEXT VISIBILITY */
 .video-hero .hero-text h1,
@@ -1201,6 +1093,105 @@ body.dark .video-overlay {
 
   .video-hero .hero-text h1 {
     font-size: 34px;
+  }
+
+  .video-hero .hero-text h3 {
+    font-size: 18px;
+  }
+
+  .video-hero .hero-text p {
+    font-size: 14px;
+  }
+}
+/* =========================
+   HERO BACKGROUND VIDEO – FINAL
+   MOBILE + DARK MODE SUPPORTED
+   ========================= */
+
+.video-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Background video */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Overlay for readability */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(2,6,23,0.75),
+    rgba(2,6,23,0.85)
+  );
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+}
+
+/* Force white text */
+.video-hero .hero-text h1,
+.video-hero .hero-text h3,
+.video-hero .hero-text p {
+  color: #ffffff;
+}
+
+.video-hero .hero-text h1 span {
+  color: #60a5fa;
+}
+
+/* Button */
+.video-hero .btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Dark mode */
+body.dark .video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.9)
+  );
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+
+  .bg-video {
+    display: block;          /* VIDEO ON */
+    opacity: 0.2;
+    filter: blur(1.5px);
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+    gap: 30px;
+  }
+
+  .video-hero .hero-text h1 {
+    font-size: 32px;
   }
 
   .video-hero .hero-text h3 {
